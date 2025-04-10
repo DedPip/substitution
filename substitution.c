@@ -4,6 +4,9 @@
 
 int main(void)
 {
+    string upperCaseAlphabet = "abcdefghijklmnopqrstuvwxyz";
+    string lowerCaseAlphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    
     string original = "abc";
     string text = "ac";
     string key = "xyz";
