@@ -10,15 +10,17 @@ int main(int argc, string argv[])
         printf("Usage: ./substitution key\n");
         return 1;
     }
+
     string key = argv[1];
+    int key_length = strlen(key);
     printf("%c\n", key[2]);
-    if (strlen(argv[1]) != 26)
+
+    if (key_length != 26)
     {
         printf("Key must contain 26 characters.\n");
         return 1;
     }
     
-    int key_length = strlen(key);
     char key_lower[key_length + 1];
     
     for (int i = 0; i < key_length; i++)
@@ -36,7 +38,7 @@ int main(int argc, string argv[])
         }
         else 
         {
-            printf("The key must only contain letters!\n");
+            printf("Key must only contain letters.\n");
             return 1;
         }    
     }
@@ -49,11 +51,12 @@ int main(int argc, string argv[])
         {
             if (key_lower[i] == key_lower[j])
             {
-                printf("The key must not contain duplicate letters!\n");
+                printf("Key must not contain duplicate letters.\n");
                 return 1;
             }
         }
     }
+    
     string input_text = get_string("plaintext:  ");
     string input_key = argv[1];
 
