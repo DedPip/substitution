@@ -13,7 +13,6 @@ int main(int argc, string argv[])
 
     string key = argv[1];
     int key_length = strlen(key);
-    printf("%c\n", key[2]);
 
     if (key_length != 26)
     {
@@ -38,12 +37,12 @@ int main(int argc, string argv[])
         }
         else 
         {
-            printf("Key must only contain letters.\n");
+            printf("Key must only contain english letters.\n");
             return 1;
         }    
     }
+
     key_lower[key_length] = '\0';
-    printf("%s\n", key_lower);
     
     for (int i = 0; i < key_length; i++)
     {
@@ -56,7 +55,7 @@ int main(int argc, string argv[])
             }
         }
     }
-    
+
     string input_text = get_string("plaintext:  ");
     string input_key = argv[1];
 
@@ -89,5 +88,4 @@ int main(int argc, string argv[])
     }
     encrypted[strlen(input_text)] = '\0';
     printf("ciphertext: %s\n", encrypted);
-
 }
